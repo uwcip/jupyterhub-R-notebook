@@ -1,2 +1,1 @@
-# jupyterhub-R-notebook
-default R image
+Base R notebook for jupyterhub
