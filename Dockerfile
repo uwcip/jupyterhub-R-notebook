@@ -8,11 +8,7 @@ USER root
 # install updates and dependencies
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get -q update && apt-get -y upgrade && \
-<<<<<<< HEAD
-    apt-get install -y --no-install-recommends apt-utils && \
-=======
     apt-get install -y --no-install-recommends apt-utils openssl libssl-dev && \
->>>>>>> 14427e78c29a6d2e46703b1ed13e50d9864fb9d0
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # install R and some libraries
