@@ -8,7 +8,11 @@ USER root
 # install updates and dependencies
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get -q update && apt-get -y upgrade && \
+<<<<<<< HEAD
     apt-get install -y --no-install-recommends apt-utils && \
+=======
+    apt-get install -y --no-install-recommends apt-utils openssl libssl-dev && \
+>>>>>>> 14427e78c29a6d2e46703b1ed13e50d9864fb9d0
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # install R and some libraries
@@ -52,7 +56,8 @@ RUN wget --quiet "https://cran.r-project.org/src/contrib/signnet_1.0.1.tar.gz" &
     R CMD INSTALL signnet_1.0.1.tar.gz && \
     rm -rf signnet_1.0.1.tar.gz && \
     fix-permissions "${CONDA_DIR}" && \
-    fix-permissions "/home/${NB_USER}"
+    fix-permissions "/home/${NB_USER}" && \
+    true
 
 # ensure that we run the container as the notebook user
 USER ${NB_UID}
