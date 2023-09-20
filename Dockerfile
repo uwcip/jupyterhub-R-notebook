@@ -48,9 +48,9 @@ RUN conda install --quiet --yes \
 
 # install signnet which does not have a conda package at the moment.
 WORKDIR /tmp
-RUN wget --quiet "https://cran.r-project.org/src/contrib/signnet_1.0.1.tar.gz" && \
-    R CMD INSTALL signnet_1.0.1.tar.gz && \
-    rm -rf signnet_1.0.1.tar.gz && \
+RUN wget --quiet "https://cran.r-project.org/src/contrib/signnet_1.0.2.tar.gz" && \
+    R CMD INSTALL signnet_1.0.2.tar.gz && \
+    rm -rf signnet_1.0.2.tar.gz && \
     fix-permissions "${CONDA_DIR}" && \
     fix-permissions "/home/${NB_USER}" && \
     true
